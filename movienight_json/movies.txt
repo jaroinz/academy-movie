@@ -1,0 +1,6 @@
+INSERT INTO movies (title, genre, location) VALUES ('Immortals', 'Action', 'Lighthouse Cinema');
+INSERT INTO movies (title, genre, location) VALUES ('Prometheus', 'Science Fiction', 'Embassy Theatre');
+INSERT INTO movies (title, genre, location) VALUES ('Tinker Tailor Soldier Spy', 'Thriller', 'Reading Cinemas');
+INSERT INTO movies (title, genre, location) VALUES ('John Carter', 'Science Fiction', 'Embassy Theatre');
+INSERT INTO movies (title, genre, location) VALUES ('The Hobbit', 'Fantasy', 'Embassy Theatre');
+INSERT INTO movies (title, genre, location) VALUES ('The Dark Knight Rises', 'Action', 'Paramount Theatre');

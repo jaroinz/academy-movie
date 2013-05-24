@@ -1,0 +1,4 @@
+INSERT INTO users (name) VALUES ('John');
+INSERT INTO users (name) VALUES ('Mary');
+INSERT INTO users (name) VALUES ('Andy');
+INSERT INTO users (name) VALUES ('Kath');
