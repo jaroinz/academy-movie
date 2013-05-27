@@ -14,7 +14,7 @@ $( document ).ready(function() {
 		$.each(json.movies, function(i, obj) {
 			  console.log('movie: ' + obj.movie_id + ' - ' + obj.title);
 			  $('fieldset[data-role="controlgroup"]').append(
-			        '<input name="movieId" id="radio-'+obj.movie_id+'" value="'+obj.movie_id+'" type="radio">'+
+			        '<input name="movieId" id="radio-'+obj.movie_id+'" value="'+obj.movie_id+'" type="radio"/>'+
 			        '<label for="radio-'+obj.movie_id+'">'+obj.title+'</label>'					  
 			  );
 		});

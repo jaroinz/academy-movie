@@ -10,8 +10,20 @@ $('form').submit(function(){
 		type: 'GET',
 	})
 	.done(function(msg){
-		console.log('result: ' + msg.result + ' msg: ' + msg.message +' ' + msg.votes);
-		alert('result: ' + msg.result + ' msg: ' + msg.message +' ' + msg.votes );
+		console.log('result: ' + msg.result + ' msg: ' + msg.message + ' ' + msg.votes);
+		var votesList = 'Votes: <br>';
+		$.each($('input[type="radio"]'), function(i, obj) {
+			var counter = 0;
+			$.each(msg.votes, function(j, vobj){
+				if(vobj.movie_id==obj.value){
+					counter += 1;
+				}
+			});			
+			votesList += counter + ' for ' + $('label[for="'+ obj.id +'"] span[class="ui-btn-text"]').html() + '<br>';	  
+		});
+		$( "#votingResultsPopUp" ).html(msg.result + ', ' + msg.message + '<br>' + votesList);
+				
+		$( "#votingResultsPopUp" ).popup( "open" );		
 	})
 	.fail(function(msgjqXHR, textStatus, errorThrown){
 		console.log(msgjqXHR);
