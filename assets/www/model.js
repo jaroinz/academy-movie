@@ -11,14 +11,18 @@ $( document ).ready(function() {
 			  $("select#userId").append('<option value="'+obj.user_id+'">'+obj.name+'</option>');			  
 		});
 		$("select#userId").selectmenu("refresh");
+		
+		var radioList = "<fieldset data-role=\"controlgroup\"><legend>Choose your favourite movie</legend>";
 		$.each(json.movies, function(i, obj) {
-			  console.log('movie: ' + obj.movie_id + ' - ' + obj.title);
-			  $('fieldset[data-role="controlgroup"]').append(
-			        '<input name="movieId" id="radio-'+obj.movie_id+'" value="'+obj.movie_id+'" type="radio"/>'+
-			        '<label for="radio-'+obj.movie_id+'">'+obj.title+'</label>'					  
-			  );
+			radioList += '<input name="movieId" id="radio-'+obj.movie_id+'" value="'+obj.movie_id+'" type="radio"/>'+
+	        			 '<label for="radio-'+obj.movie_id+'">'+obj.title+'</label>';
+			
+            console.log('movie: ' + obj.movie_id + ' - ' + obj.title);
 		});
-        $("input[type='radio']").checkboxradio().checkboxradio("refresh");
+		radioList += "</fieldset>";
+		
+        $('form').append(radioList);
+        $('form').append("<input value=\"My vote!\" type=\"submit\">").trigger("create");
 
 	})
 	.fail(function(msgjqXHR, textStatus, errorThrown){
